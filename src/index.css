@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Lumen Circles Design System - Quiet luxury meets editorial clarity */
+
+@layer base {
+  :root {
+    /* Surface Colors - Soft, breathable hierarchy */
+    --background: 0 0% 100%;
+    --surface: 0 0% 99%;
+    --surface-elevated: 0 0% 98%;
+    --surface-muted: 220 13% 96%;
+    
+    /* Text Colors - Clear hierarchy with excellent contrast */
+    --foreground: 224 14% 12%;
+    --foreground-secondary: 224 12% 24%;
+    --foreground-muted: 224 8% 48%;
+    --foreground-subtle: 224 6% 64%;
+    
+    /* Brand Colors - Sophisticated, understated presence */
+    --brand-primary: 250 84% 54%;
+    --brand-primary-hover: 250 84% 48%;
+    --brand-surface: 252 87% 96%;
+    --brand-surface-hover: 252 87% 92%;
+    --brand-on-primary: 0 0% 100%;
+    
+    /* Interactive States */
+    --interactive-hover: 220 13% 92%;
+    --interactive-active: 220 13% 88%;
+    --interactive-focus: 250 84% 54%;
+    
+    /* Semantic Colors */
+    --success: 142 71% 45%;
+    --success-surface: 142 76% 95%;
+    --warning: 38 92% 50%;
+    --warning-surface: 38 100% 95%;
+    --danger: 0 84% 60%;
+    --danger-surface: 0 86% 95%;
+    --info: 199 89% 48%;
+    --info-surface: 199 95% 95%;
+    
+    /* Borders & Inputs */
+    --border: 220 13% 90%;
+    --border-strong: 220 13% 80%;
+    --border-focus: 250 84% 54%;
+    --input-background: 0 0% 99%;
+    --input-border: 220 13% 88%;
+    
+    /* Legacy shadcn compatibility */
+    --card: var(--surface-elevated);
+    --card-foreground: var(--foreground);
+    --popover: var(--surface-elevated);
+    --popover-foreground: var(--foreground);
+    --primary: var(--brand-primary);
+    --primary-foreground: var(--brand-on-primary);
+    --secondary: var(--surface-muted);
+    --secondary-foreground: var(--foreground);
+    --muted: var(--surface-muted);
+    --muted-foreground: var(--foreground-subtle);
+    --accent: var(--interactive-hover);
+    --accent-foreground: var(--foreground);
+    --destructive: var(--danger);
+    --destructive-foreground: var(--brand-on-primary);
+    --ring: var(--border-focus);
+    
+    /* Design tokens */
+    --radius: 1rem;
+    --radius-lg: 1.25rem;
+    --radius-xl: 1.5rem;
+    
+    /* Sidebar variables */
+    --sidebar-background: var(--surface);
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--brand-primary);
+    --sidebar-primary-foreground: var(--brand-on-primary);
+    --sidebar-accent: var(--interactive-hover);
+    --sidebar-accent-foreground: var(--foreground);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--border-focus);
+  }
+
+  .dark {
+    /* Surface Colors - Rich, premium dark */
+    --background: 224 14% 6%;
+    --surface: 224 14% 8%;
+    --surface-elevated: 224 14% 10%;
+    --surface-muted: 224 12% 12%;
+    
+    /* Text Colors - Excellent readability */
+    --foreground: 224 8% 92%;
+    --foreground-secondary: 224 8% 84%;
+    --foreground-muted: 224 8% 64%;
+    --foreground-subtle: 224 8% 48%;
+    
+    /* Brand Colors - Vibrant against dark */
+    --brand-primary: 250 84% 64%;
+    --brand-primary-hover: 250 84% 68%;
+    --brand-surface: 250 84% 12%;
+    --brand-surface-hover: 250 84% 16%;
+    --brand-on-primary: 224 14% 6%;
+    
+    /* Interactive States */
+    --interactive-hover: 224 12% 16%;
+    --interactive-active: 224 12% 20%;
+    --interactive-focus: 250 84% 64%;
+    
+    /* Semantic Colors - Dark theme optimized */
+    --success: 142 71% 55%;
+    --success-surface: 142 71% 12%;
+    --warning: 38 92% 60%;
+    --warning-surface: 38 92% 12%;
+    --danger: 0 84% 68%;
+    --danger-surface: 0 84% 12%;
+    --info: 199 89% 58%;
+    --info-surface: 199 89% 12%;
+    
+    /* Borders & Inputs */
+    --border: 224 12% 18%;
+    --border-strong: 224 12% 24%;
+    --border-focus: 250 84% 64%;
+    --input-background: 224 14% 8%;
+    --input-border: 224 12% 20%;
+    
+    /* Legacy shadcn compatibility */
+    --card: var(--surface-elevated);
+    --card-foreground: var(--foreground);
+    --popover: var(--surface-elevated);
+    --popover-foreground: var(--foreground);
+    --primary: var(--brand-primary);
+    --primary-foreground: var(--brand-on-primary);
+    --secondary: var(--surface-muted);
+    --secondary-foreground: var(--foreground);
+    --muted: var(--surface-muted);
+    --muted-foreground: var(--foreground-subtle);
+    --accent: var(--interactive-hover);
+    --accent-foreground: var(--foreground);
+    --destructive: var(--danger);
+    --destructive-foreground: var(--brand-on-primary);
+    --ring: var(--border-focus);
+    
+    /* Sidebar dark theme */
+    --sidebar-background: var(--surface);
+    --sidebar-foreground: var(--foreground);
+    --sidebar-primary: var(--brand-primary);
+    --sidebar-primary-foreground: var(--brand-on-primary);
+    --sidebar-accent: var(--interactive-hover);
+    --sidebar-accent-foreground: var(--foreground);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--border-focus);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--border-focus));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  
+  *:focus {
+    outline: none;
+  }
+
+  /* Smooth transitions for theme switching */
+  * {
+    transition: background-color 180ms cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 180ms cubic-bezier(0.4, 0, 0.2, 1),
+                color 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Respect user motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Typography System */
+  .text-headline-1 {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    @apply text-4xl md:text-5xl font-semibold leading-tight tracking-tight;
+  }
+  
+  .text-headline-2 {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    @apply text-3xl md:text-4xl font-semibold leading-tight tracking-tight;
+  }
+  
+  .text-headline-3 {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    @apply text-2xl md:text-3xl font-medium leading-snug;
+  }
+  
+  .text-body-lg {
+    @apply text-lg leading-relaxed;
+  }
+  
+  .text-body {
+    @apply text-base leading-relaxed;
+  }
+  
+  .text-body-sm {
+    @apply text-sm leading-relaxed;
+  }
+  
+  .text-caption {
+    @apply text-xs leading-normal tracking-wide uppercase font-medium;
+  }
+
+  /* Surface hierarchy */
+  .surface-elevated {
+    @apply bg-surface-elevated border border-border rounded-2xl;
+  }
+
+  /* Interactive elements */
+  .interactive-hover {
+    @apply transition-all duration-150 ease-out hover:bg-interactive-hover;
+  }
+  
+  .interactive-scale {
+    @apply transition-transform duration-150 ease-out hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  /* Focus ring for interactive elements */
+  .focus-ring {
+    @apply focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  /* Content container */
+  .content-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--border-strong));
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Accordion animations */
+  @keyframes accordion-down {
+    from {
+      height: 0;
+      opacity: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
+    }
+    to {
+      height: 0;
+      opacity: 0;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 180ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 180ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 180ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+  
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+}
